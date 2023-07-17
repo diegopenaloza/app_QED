@@ -1,0 +1,322 @@
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script type="text/javascript">
+  $(function() {
+    $( "#coding_language" ).autocomplete({
+      source: 'autocomplete_test.php?search_column=nombre'
+    });
+  });
+
+$(function()
+{
+ $( "#coding_ruc" ).autocomplete({
+  source: 'autocomplete_test_2.php'
+ });
+});
+
+</script>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/QEDlogo.png" alt="" width="280">
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="#acercade">Acerca de</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row gy-4 d-flex justify-content-between">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h2 data-aos="fade-up"><font style='size:9px !important;'>Consulta quiénes son los beneficiarios finales de contratos públicos</font></h2>
+          <p data-aos="fade-up" data-aos-delay="100">Beneficiario final es la persona natural que está detrás o controla una persona jurídica, pudiendo ser accionistas, representantes o dueños de estas empresas.</p>
+
+
+          <style>
+            .active_2 {
+              background-color: #007bff !important;
+              color: #fff !important;
+            }
+
+            .inactive_2 {
+              background-color: transparent !important;
+              color: #007bff !important;
+            }
+          </style>
+
+        <div id="sugerencias-list" class="lista_referencias"></div>
+          <div id="formNombre" class="d-block">
+            <form action="consulta_v2.php" method="post" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              <input type="text" id="coding_language" name="r" class="form-control" placeholder="Escribe el nombre de la persona a consultar">
+              <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+          </div>
+
+          <div id="formRuc" class="d-none">
+            <form action="consulta.php" method="post" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              <input type="text" id="coding_ruc" name="r" class="form-control" placeholder="Escribe el RUC de la persona a consultar">
+              <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+          </div>
+
+          <script>
+            $(function() {
+              $('#switchForm').change(function() {
+                if ($(this).is(':checked')) {
+                  $('#formRuc').removeClass('d-none').addClass('d-block');
+                  $('#formNombre').removeClass('d-block').addClass('d-none');
+                  $('#switchForm').removeClass('inactive_2').addClass('active_2');
+                } else {
+                  $('#formNombre').removeClass('d-none').addClass('d-block');
+                  $('#formRuc').removeClass('d-block').addClass('d-none');
+                  $('#switchForm').removeClass('active_2').addClass('inactive_2');
+                }
+              });
+            });
+          </script>
+
+
+          <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
+
+            <div class="col-lg-3 col-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="11232" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Compañías</p>
+              </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="84177" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Personas</p>
+              </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="5304" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Contratos</p>
+              </div>
+            </div><!-- End Stats Item -->
+
+            <div class="col-lg-3 col-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Entidades</p>
+              </div>
+            </div><!-- End Stats Item -->
+
+          </div>
+        </div>
+
+        <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+          <img src="assets/img/manbehind.png" class="img-fluid mb-3 mb-lg-0" alt="" style="max-width:400px;">
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header" id="acercade">
+          <span>PREGUNTAS FRECUENTES</span>
+          <h2>PREGUNTAS FRECUENTES</h2>
+
+        </div>
+
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-10">
+
+            <div class="accordion accordion-flush" id="faqlist">
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    <i class="bi bi-question-circle question-icon"></i>
+                    ¿Qué es un beneficiario final o beneficiario real?
+                  </button>
+                </h3>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Beneficiarios finales o beneficiarios reales son las personas naturales o físicas que están detrás de una entidad o persona jurídica y que la controlan. Es decir, sus propietarios, accionistas o dueños, que son las personas que deciden sobre los ingresos y beneficios de una persona jurídica.</div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                    <i class="bi bi-question-circle question-icon"></i>
+                    ¿De dónde saca este sitio los datos?
+                  </button>
+                </h3>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    ¿Quién está detrás? Obtiene los datos de fuentes oficiales como el Servicio Nacional de Contratación Pública (SERCOP), el Servicio de Rentas Internas (SRI), la Superintendencia de Compañías, Valores y Seguros, entre otras entidades oficiales.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                    <i class="bi bi-question-circle question-icon"></i>
+                    ¿Se debe observar a los beneficiarios finales como algo negativo?
+                  </button>
+                </h3>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    No. Es común que compañías se beneficien de contratos públicos de forma legítima y honesta. Este sitio no sugiere ni plantea que todos los beneficiarios finales presentados están relacionados a alguna actividad no adecuada. Se trata de un ejercicio de transparencia para conocer y monitorear el destino de los fondos públicos en Ecuador, en el marco de las normativas vigentes.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+
+    <div class="container mt-4">
+      <div class="copyright"><font color="#134C84">
+      ¿Quién está detrás? es un proyecto de Fundapi desarrollado gracias al apoyo de los Estados Unidos a través de la Agencia de los Estados Unidos para el Desarrollo Internacional (USAID) y de la Fundación Panamericana para el Desarrollo (PADF). El contenido de este sitio web es responsabilidad de Fundapi y no necesariamente refleja las opiniones de USAID, del Gobierno de Estados Unidos o de PADF.</font><br>
+
+      <img src='https://dondeseinvierte.com/wp-content/uploads/2022/11/footerfundapi.png' width='95'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='https://dondeseinvierte.com/wp-content/uploads/2022/11/padffooter.png' width='125'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src='https://dondeseinvierte.com/wp-content/uploads/2022/11/usaidfooter.png' width='130'>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1NNNR0H03"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G1NNNR0H03');
+
+
+
+
+
+
+
+
+
+
+  var valorInput = document.getElementById('coding_language');
+  var sugerenciasList = document.getElementById('sugerencias-list');
+
+  valorInput.addEventListener('input', function() {
+    var valor = valorInput.value;
+
+    // Realizar una solicitud AJAX al archivo PHP para obtener las sugerencias
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Limpiar la lista de sugerencias existente
+        sugerenciasList.innerHTML = '';
+
+        // Obtener las sugerencias de la respuesta JSON
+        var response = JSON.parse(xhr.responseText);
+        var sugerencias = response.sugerencias;
+        var ruc = response.ruc;
+
+        // Agregar las sugerencias a los divs
+        sugerencias.forEach(function(sugerencia, index) {
+          var div = document.createElement('div');
+          div.textContent = sugerencia + '-' + ruc[index];
+          div.setAttribute('name', ruc[index]);
+          div.setAttribute('ruc', ruc[index]);
+          div.classList.add('sugiere');
+
+          // Agregar evento de clic al div
+          div.addEventListener('click', function() {
+            valorInput.value = div.textContent;
+          //   valorInput.setAttribute('name', div.getAttribute('name'));
+            valorInput.setAttribute('ruc', div.getAttribute('ruc'));
+          });
+
+          sugerenciasList.appendChild(div);
+        });
+      }
+    };
+
+    xhr.open('GET', 'sugerencias.php?valor=' + encodeURIComponent(valor), true);
+    xhr.send();
+  });
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ~                        
